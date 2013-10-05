@@ -1,0 +1,36 @@
+# Project: Project1
+# Makefile created by Dev-C++ 4.9.9.2
+
+CPP  = g++.exe
+CC   = gcc.exe
+WINDRES = windres.exe
+RES  = 
+OBJ  = chat.o CSprite.o CSpriteBase.o $(RES)
+LINKOBJ  = chat.o CSprite.o CSpriteBase.o $(RES)
+LIBS =  -L"C:/Dev-Cpp/lib" -lmingw32 -lSDLmain -lSDL -lSDL_net -mwindows  
+INCS =  -I"C:/Dev-Cpp/include"  -I"C:/Dev-Cpp/include/SDL" 
+CXXINCS =  -I"C:/Dev-Cpp/lib/gcc/mingw32/3.4.2/include"  -I"C:/Dev-Cpp/include/c++/3.4.2/backward"  -I"C:/Dev-Cpp/include/c++/3.4.2/mingw32"  -I"C:/Dev-Cpp/include/c++/3.4.2"  -I"C:/Dev-Cpp/include"  -I"C:/Dev-Cpp/include/SDL" 
+BIN  = Project1.exe
+CXXFLAGS = $(CXXINCS)   -O3
+CFLAGS = $(INCS)   -O3
+RM = rm -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before Project1.exe all-after
+
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o "Project1.exe" $(LIBS)
+
+chat.o: chat.cpp
+	$(CPP) -c chat.cpp -o chat.o $(CXXFLAGS)
+
+CSprite.o: CSprite.cpp
+	$(CPP) -c CSprite.cpp -o CSprite.o $(CXXFLAGS)
+
+CSpriteBase.o: CSpriteBase.cpp
+	$(CPP) -c CSpriteBase.cpp -o CSpriteBase.o $(CXXFLAGS)

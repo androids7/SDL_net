@@ -16,9 +16,6 @@ Things that can be added:
 -> On server, list players , names and other useful data
 -> character selection screen
 
-Regards,
-ANUJ AGARWAL
-
 I have used this example ->
 
 CHATD:  A chat server using the SDL example network library
